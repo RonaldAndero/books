@@ -2,10 +2,10 @@ const titleInput = document.querySelector('#book_title')
 const authorInput = document.querySelector('#author_name')
 const isbnInput = document.querySelector('#isbn_code')
 const bookList = document.querySelector('tbody')
-
+const delAllBooks = document.querySelector('#del_all')
 
 bookList.addEventListener('click', deleteBook)
-
+delAllBooks.addEventListener('click', deleteAllBooks)
 
 function addBook() {
     // check if data is correct
@@ -33,15 +33,6 @@ function addBook() {
     a.className = 'waves-effect waves-light btn green lighten-3'
     a.appendChild(document.createTextNode('X')) 
 
-    // create checkbox
-    //const label = document.createElement('label')
-    //label.appendChild(document.createElement('input')).setAttribute('type', 'checkbox')
-    //label.querySelector('input').setAttribute('checked', 'checked')
-    //label.querySelector('input').setAttribute('id', 'box')
-    //label.querySelector('input').className = 'filled-in'
-    //label.appendChild(document.createElement('span'))
-    // console.log(label)
-    
     // add chosen values to table
     cell1.innerHTML = titleInput.value
     cell2.innerHTML = authorInput.value
@@ -60,6 +51,14 @@ function deleteBook(e){
     if(e.target.textContent == 'X'){
         if(confirm('Are you sure to delete this book?')){
             e.target.parentElement.parentElement.remove()
+        }
+    }
+}
+
+function deleteAllBooks(e){
+    if(confirm('Are you sure to delete all books?')){
+        while (bookList.firstChild){
+            bookList.removeChild(bookList.firstChild)
         }
     }
 }
