@@ -1,59 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Books</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-</head>
-<body>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <!-- submit new book -->
-    <div class="container z-depth-2" style="margin-top: 2em;">
-        <div class="row">
-            <form class="col s12" style="margin-top: 2em;">
-                <!-- add the title -->
-                <input placeholder="Add the title..." id="book_title" type="text" class="validate">
-                <label for="book_title"><i class="material-icons tiny">book</i>Title</label> 
-                
-                <!-- add the author -->
-                <input placeholder="Add the author..." id="author_name" type="text" class="validate">
-                <label for="author_name"><i class="material-icons tiny">face</i>Author</label>  
-                
-                <!-- add the author -->
-                <input placeholder="Add the ISBN..." id="isbn_code" type="number" class="validate">
-                <label for="isbn_code"><i class="material-icons tiny">fiber_pin</i>ISBN</label>  
-            </form>
-          </div>
-    <div class="row">
-        <div class="col s12" style="margin-bottom: 2em;">
-            <button class="btn waves-effect waves-light green lighten-3" type="submit" name="action" onclick="addBook()">Submit
-                <i class="material-icons right">send</i>
-              </button>
+    <div class="container z-depth-2" style="margin-top: 2em">
+      <div class="row">
+        <form class="col s12" style="margin-top: 2em">
+          <!-- add the title -->
+          <input
+            placeholder="Add the title..."
+            id="book_title"
+            type="text"
+            class="validate"
+          />
+          <label for="book_title"
+            ><i class="material-icons tiny">book</i>Title</label
+          >
+
+          <!-- add the author -->
+          <input
+            placeholder="Add the author..."
+            id="author_name"
+            type="text"
+            class="validate"
+          />
+          <label for="author_name"
+            ><i class="material-icons tiny">face</i>Author</label
+          >
+
+          <!-- add the author -->
+          <input
+            placeholder="Add the ISBN..."
+            id="isbn_code"
+            type="number"
+            class="validate"
+          />
+          <label for="isbn_code"
+            ><i class="material-icons tiny">fiber_pin</i>ISBN</label
+          >
+        </form>
+      </div>
+      <div class="row">
+        <div class="col s12" style="margin-bottom: 2em">
+          <button
+            class="btn waves-effect waves-light green lighten-3"
+            type="submit"
+            name="action"
+            onclick="addBook()"
+          >
+            Submit
+            <i class="material-icons right">send</i>
+          </button>
         </div>
-    </div>
+      </div>
     </div>
 
     <!-- book list -->
-    <div class="container z-depth-2" style="margin-top: 2em;">
-        <table class="striped" style="table-layout: fixed;" id="books">
-            <thead>
-              <tr>
-                  <th>Title</th>
-                  <th>Author</th>
-                  <th>ISBN</th>
-              </tr>
-            </thead>
-    
-            <tbody>
-            </tbody>
-          </table>
+    <div class="container z-depth-2" style="margin-top: 2em">
+      <table class="striped" style="table-layout: fixed" id="books">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>ISBN</th>
+            <th style="width: 10%">
+                <a class="waves-effect waves-light btn green lighten-3">Delete all</a>
+            </th>
+          </tr>
+        </thead>
+
+        <tbody></tbody>
+      </table>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="app.js"></script>
-</body>
+  </body>
 </html>
